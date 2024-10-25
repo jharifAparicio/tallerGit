@@ -1,11 +1,9 @@
-## crear la llave ssh en linux y windows
-ssh-keygen -t rsa -b 4096 -C "tu-email@example.com"
+## crear alias personalizados
+git config --global alias.[comando] "nuevo_alias"
 
-## verificar la URL actual
-git remote -v
-## cambiar la URL para SSH
-git remote set-url origin "enlace-ssh"
-## verificar la URL actual
-git remote -v
-## probar conectividad con github
-ssh -T git@github.com
+## listar todos los alias
+git config --global --get-regexp alias
+git config --global --get-regexp *alias\.
+
+## eliminar alias
+git config --global --unset alias.[nombre-del-alias]
